@@ -14,4 +14,4 @@ print(num)
 
 # Exercise 3
 # NOTE: Your solution may vary!
-print(2e308)
+print(2e3)
