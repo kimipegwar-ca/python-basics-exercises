@@ -31,9 +31,6 @@ def is_prime(n):
             return False
     return True
 
-primes = [n for n in range(1, 51) if is_prime(n)]
-print("Primes between 1 and 50:", primes)
-
 # --------------------------------------
 # Calculate factorial of a number
 
@@ -48,19 +45,11 @@ def factorial(n):
             result *= i
         return result  
     
-num = int(input("Enter a number to calculate its factorial: "))
-print(f"Factorial of {num} is:", factorial(num))    
-  
 # --------------------------------------  
     # Check if a number is palindrome
 def is_palindrome(s):
     s = str(s)
     return s == s[::-1]
-test_str = input("Enter a string or number to check for palindrome: ")
-if is_palindrome(test_str):
-    print(f"{test_str} is a palindrome.")
-else:
-    print(f"{test_str} is not a palindrome.")
 
 # --------------------------------------
 # Fibonacci sequence up to n terms
@@ -71,16 +60,6 @@ def fibonacci(n):
         sequence.append(a)
         a, b = b, a + b
     return sequence     
-terms = int(input("Enter number of terms for Fibonacci sequence: "))
-print("Fibonacci sequence:", fibonacci(terms))
-
-# --------------------------------------
-# Check if a number is prime
-num = int(input("Enter a number to check if it's prime: "))
-if is_prime(num):
-    print(f"{num} is a prime number.")
-else:
-    print(f"{num} is not a prime number.")
 
 # --------------------------------------
 # Find the largest number in a list
@@ -92,22 +71,16 @@ def find_largest(numbers):
         if num > largest:
             largest = num
     return largest
-num_list = [34, 67, 23, 89, 2, 90, 45]
-print("Largest number in the list:", find_largest(num_list))
 
 # --------------------------------------
 # Reverse a string
 def reverse_string(s):
     return s[::-1]
-input_str = input("Enter a string to reverse: ")
-print("Reversed string:", reverse_string(input_str))
 
 # --------------------------------------
 # Calculate the sum of digits of a number
 def sum_of_digits(n):
     return sum(int(digit) for digit in str(abs(n)))
-number = int(input("Enter a number to sum its digits: "))
-print("Sum of digits:", sum_of_digits(number))
 
 # --------------------------------------
 # Check if a year is a leap year
@@ -126,21 +99,9 @@ def multiplication_table(n, upto=10):
     for i in range(1, upto + 1):
         table.append(f"{n} x {i} = {n * i}")
     return table
-num_for_table = int(input("Enter a number to generate its multiplication table: "))
-for line in multiplication_table(num_for_table):
-    print(line)
+
 
 # --------------------------------------        
-# Calculate the GCD of two numbers
-def gcd(a, b):
-    while b:
-        a, b = b, a % b
-    return a        
-num1 = int(input("Enter first number for GCD: "))
-num2 = int(input("Enter second number for GCD: "))
-print(f"GCD of {num1} and {num2} is:", gcd(num1, num2))
-
-# --------------------------------------
 # Check if a string is a pangram
 import string
 def is_pangram(s):
@@ -160,16 +121,13 @@ def second_largest(numbers):
     if len(unique_numbers) < 2:
         return None
     return unique_numbers[-2]
-num_list_for_second = [34, 67, 23, 89, 2, 90, 45]
-print("Second largest number in the list:", second_largest(num_list_for_second))
+
 
 # --------------------------------------
 # Count vowels in a string
 def count_vowels(s):
     vowels = 'aeiouAEIOU'
     return sum(1 for char in s if char in vowels)
-input_string_for_vowels = input("Enter a string to count vowels: ")
-print("Number of vowels:", count_vowels(input_string_for_vowels))
 
 # --------------------------------------
 # Find the length of a string without using len()
@@ -178,8 +136,6 @@ def string_length(s):
     for _ in s:
         count += 1
     return count
-input_str_length = input("Enter a string to find its length: ")
-print("Length of the string:", string_length(input_str_length))
 
 # --------------------------------------
 # Check if two strings are anagrams
@@ -198,8 +154,7 @@ def average(numbers):
     if not numbers:
         return 0
     return sum(numbers) / len(numbers)
-num_list_for_avg = [34, 67, 23, 89, 2, 90, 45]
-print("Average of the list:", average(num_list_for_avg))
+
 
 # --------------------------------------
 # Check if a number is even or odd
@@ -215,21 +170,6 @@ else:
 # Find the sum of all even numbers in a list
 def sum_of_evens(numbers):
     return sum(num for num in numbers if num % 2 == 0)
-num_list_for_even_sum = [34, 67, 23, 89, 2, 90, 45]
-print("Sum of even numbers in the list:", sum_of_evens(num_list_for_even_sum))
-
-# --------------------------------------    
-# Convert decimal to binary
-def decimal_to_binary(n):
-    if n == 0:
-        return "0"
-    binary = ""
-    while n > 0:
-        binary = str(n % 2) + binary
-        n //= 2
-    return binary
-decimal_number = int(input("Enter a decimal number to convert to binary: "))
-print("Binary representation:", decimal_to_binary(decimal_number))
 
 # --------------------------------------    
 # Find the mode of a list of numbers
@@ -259,3 +199,49 @@ else:
 
 # -------------------------------------- 
     
+
+# Define main function 
+if __name__ == "__main__":
+
+    primes = [n for n in range(1, 51) if is_prime(n)]
+    print("Primes between 1 and 50:", primes)
+
+    num = int(input("Enter a number to calculate its factorial: "))
+    print(f"Factorial of {num} is:", factorial(num)) 
+
+    test_str = input("Enter a string or number to check for palindrome: ")
+    if is_palindrome(test_str):
+        print(f"{test_str} is a palindrome.")
+    else:
+        print(f"{test_str} is not a palindrome.")
+
+    terms = int(input("Enter number of terms for Fibonacci sequence: "))
+    print("Fibonacci sequence:", fibonacci(terms))    
+
+    num_list = [34, 67, 23, 89, 2, 90, 45]
+    print("Largest number in the list:", find_largest(num_list))
+
+    input_str = input("Enter a string to reverse: ")
+    print("Reversed string:", reverse_string(input_str))
+
+    number = int(input("Enter a number to sum its digits: "))
+    print("Sum of digits:", sum_of_digits(number))
+
+    num_for_table = int(input("Enter a number to generate its multiplication table: "))
+    for line in multiplication_table(num_for_table):
+        print(line)
+
+    num_list_for_second = [34, 67, 23, 89, 2, 90, 45]
+    print("Second largest number in the list:", second_largest(num_list_for_second))  
+
+    input_string_for_vowels = input("Enter a string to count vowels: ")
+    print("Number of vowels:", count_vowels(input_string_for_vowels))
+  
+    input_str_length = input("Enter a string to find its length: ")
+    print("Length of the string:", string_length(input_str_length))
+
+    num_list_for_avg = [34, 67, 23, 89, 2, 90, 45]
+    print("Average of the list:", average(num_list_for_avg))
+
+    num_list_for_even_sum = [34, 67, 23, 89, 2, 90, 45]
+    print("Sum of even numbers in the list:", sum_of_evens(num_list_for_even_sum))
